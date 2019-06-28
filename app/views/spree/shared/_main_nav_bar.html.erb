@@ -16,7 +16,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% if Spree::Page.by_store(current_store).visible.sidebar_links.any? %>
+        <% if Spree::Page.by_store(current_store).visible.header_links.any? %>
           <%= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.visible.header_links, as: :page %>
         <% end %>        
         <li class="dropdown">
