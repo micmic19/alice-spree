@@ -1,0 +1,33 @@
+//Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
+
+
+// -- Spree Custom Header and Footer ---------------------
+#spree-header {
+  background-color: red;
+  padding-top: 0.25em;
+
+  #header {
+    /*background: rgba($gray-900, 0.4);*/
+  }
+
+  #logo {
+    margin-bottom: 10px;
+
+    img {
+      max-width: 100%;
+      max-height: 5.5vmax;
+    }
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .nav a {
+    color: white;
+
+    &:hover, &:focus {
+      /*background: rgba($gray-900, 0.4);*/
+    }
+  }
+}
