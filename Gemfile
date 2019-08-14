@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -58,7 +58,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
+gem 'pg'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -67,3 +67,11 @@ gem 'spree_auth_devise', '~> 3.5'
 gem 'spree_gateway', '~> 3.4'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
 gem 'spree_static_content', github: 'spree-contrib/spree_static_content'
+
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
+
+gem 'listen', '>= 3.0.5', '< 3.2'
