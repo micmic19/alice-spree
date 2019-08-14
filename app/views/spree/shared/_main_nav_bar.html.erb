@@ -22,7 +22,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Каталог<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            
+            <% @taxonomies ? @taxonomies : @taxonomies = Spree::Taxonomy.includes(root: :children) %>            
             <% @taxonomies.each do |taxonomy| %>
               <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
                 <% if taxonomy.root.children.any? %>
