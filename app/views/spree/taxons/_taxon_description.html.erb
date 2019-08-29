@@ -1,0 +1,10 @@
+
+<div class="taxon col-sm-12" data-hook="taxon">
+	<h3>Описание коллекции</h3>
+	<div class="col-sm-4">	
+	  <%= image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;' if taxon.icon %>
+	</div>  
+	<div class="taxon-description col-sm-8">	
+	  <%= taxon.description_ %>
+	</div>    
+</div>
