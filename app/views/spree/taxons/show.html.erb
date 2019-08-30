@@ -7,14 +7,43 @@
   </div>
 <% end %>
 
-<div data-hook="taxon_products">
-  <%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
-</div>
-
 <% unless params[:keywords].present? %>
   <div data-hook="taxon_children">
     <% cache [I18n.locale, @taxon] do %>
       <%= render partial: 'taxon', collection: @taxon.children %>
     <% end %>
   </div>
+  <% if @taxon.children.any? %>
+	  <div class="taxon-description col-sm-12">
+		<%= @taxon.description_ %>
+	  </div>
+  <% else %>
+      <%= render partial: '/spree/taxons/taxon_menu', locals: { taxon: @taxon } %>  
+	  <div class="tab-content">
+		<div id="panel1" class="tab-pane fade in active">
+			<h3>Дизайн</h3>		
+			<div data-hook="taxon_products">
+				<%= render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon } %>
+			</div>
+		</div>	  
+		<div id="panel2" class="tab-pane fade">
+			<h3>Технические характеристики</h3>
+			<div class="row">
+				<div class="taxon col-sm-4">ТЕХНИЧЕСКИЕ ДАННЫЕ</div>
+				<div class="taxon col-sm-4">ЗНАЧЕНИЯ</div>
+				<div class="taxon col-sm-4">СТАНДАРТЫ</div>
+			</div>			
+			<%= render partial: 'taxon_property', collection: @taxon.properties %>
+		</div>
+		<div id="panel3" class="tab-pane fade">
+			<h3>Сертификаты</h3>
+			<%= render partial: 'taxon_certificate', collection: @taxon.certificates %>			
+		</div>
+		<div id="panel4" class="tab-pane fade">
+			<h3>В интерьере</h3>
+			<p>Содержимое 4 панели...</p>
+		</div>		
+	  </div>
+      <%= render partial: '/spree/taxons/taxon_description', locals: { taxon: @taxon } %>
+  <% end %>
 <% end %>

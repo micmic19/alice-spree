@@ -1,33 +1,30 @@
-//Add your custom bootstrap variables here, see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss for full list of variables.
 
+#spree-header #header {
+    background: rgba(34, 34, 34, 0.05);
+}
 
-// -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background-color: red;
-  padding-top: 0.25em;
+    background-color: white;
+}
 
-  #header {
-    /*background: rgba($gray-900, 0.4);*/
-  }
+.desc_block h1 {
+    font-size: 1.3em;
+    margin: 0px;
+}
 
-  #logo {
-    margin-bottom: 10px;
+#spree-header #header .form-group {
+	border: 2px solid #66c05d;
+	border-radius: 3px 0 0 3px;
+    display: inline-block;
+}
 
-    img {
-      max-width: 100%;
-      max-height: 5.5vmax;
-    }
-  }
+.navbar-form {
+   padding: 10px 10px;
+}  
 
-  .navbar {
-    padding: 0;
-  }
-
-  .nav a {
-    color: white;
-
-    &:hover, &:focus {
-      /*background: rgba($gray-900, 0.4);*/
-    }
-  }
+#content .taxon-description {
+    margin: 20px 0;
+}
+.taxon img {
+    max-width: 100%;
 }
