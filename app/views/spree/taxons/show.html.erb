@@ -32,8 +32,10 @@
 				<div class="taxon col-sm-4">ТЕХНИЧЕСКИЕ ДАННЫЕ</div>
 				<div class="taxon col-sm-4">ЗНАЧЕНИЯ</div>
 				<div class="taxon col-sm-4">СТАНДАРТЫ</div>
-			</div>			
-			<%= render partial: 'taxon_property', collection: @taxon.properties %>
+			</div>	
+			<div class="container legend">		
+				<%= render partial: 'taxon_property', collection: @taxon.properties %>
+			</div>
 		</div>
 		<div id="panel3" class="tab-pane fade">
 			<h3>Сертификаты</h3>

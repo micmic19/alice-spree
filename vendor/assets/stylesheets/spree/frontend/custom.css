@@ -1,3 +1,10 @@
 .navbar-nav > li > .dropdown-menu {
-    background-color: #065073;
+    background-color: #80edd4;
+}
+
+.legend .row:nth-of-type(odd) div {
+background-color:antiquewhite;
+}
+.legend .row:nth-of-type(even) div {
+background: #ffffff;
 }
