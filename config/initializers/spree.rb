@@ -17,7 +17,7 @@ Spree.config do |config|
   config.alice_phone = '+7 (812) 326-05-11'
   config.alice_phone1 = '+7 (911) 211-71-49'  
   config.alice_email = 'foo@alice.ru'    
-  
+  config.allow_guest_checkout = true
 end
 
 # Configure Spree Dependencies
@@ -35,3 +35,4 @@ Spree.user_class = "Spree::User"
 
 Spree::Frontend::Config[:locale] = :ru
 Spree::Backend::Config[:locale] = :ru
+Spree::Auth::Config[:registration_step] = false
