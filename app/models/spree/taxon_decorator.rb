@@ -10,6 +10,9 @@ module MyStore
     def properties
 		parse_description "properties"
     end
+    def interior
+		parse_description "interior"
+    end
 	private
 	def parse_description param 
 		begin
