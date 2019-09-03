@@ -37,4 +37,4 @@ Spree::Frontend::Config[:locale] = :ru
 Spree::Backend::Config[:locale] = :ru
 Spree::Auth::Config[:registration_step] = false
 #ALICE
-#Spree::Config[:layout]='application'
+Spree::Config[:layout]='application'
