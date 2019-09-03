@@ -43,7 +43,7 @@
 		</div>
 		<div id="panel4" class="tab-pane fade">
 			<h3>В интерьере</h3>
-			<p>Содержимое 4 панели...</p>
+			<%= render partial: 'taxon_interior', collection: @taxon.interior %>			
 		</div>		
 	  </div>
       <%= render partial: '/spree/taxons/taxon_description', locals: { taxon: @taxon } %>

@@ -36,3 +36,5 @@ Spree.user_class = "Spree::User"
 Spree::Frontend::Config[:locale] = :ru
 Spree::Backend::Config[:locale] = :ru
 Spree::Auth::Config[:registration_step] = false
+#ALICE
+#Spree::Config[:layout]='application'
