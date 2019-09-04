@@ -1,7 +1,7 @@
 
 <div class="taxon col-sm-4">
-<%= link_to taxon_certificate["image"], {target: "_blank"} do%>  
-  <%= image_tag taxon_certificate["image"], alt: taxon_certificate["title"] %>  
-  <div><%= taxon_certificate["title"] %></div>
-<% end %>  
+	<%= link_to taxon_certificate["file"], {target: "_blank"} do %>  
+	  <%= image_tag taxon_certificate["image"], alt: taxon_certificate["title"] %>  
+	  <div><%= taxon_certificate["title"] %></div>
+	<% end %>  
 </div>
