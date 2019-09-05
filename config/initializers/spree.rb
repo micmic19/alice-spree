@@ -14,9 +14,10 @@ Spree.config do |config|
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
   config.logo = 'alice_logo.svg'
-  config.alice_phone = '+7 (812) 326-05-11'
-  config.alice_phone1 = '+7 (911) 211-71-49'  
-  config.alice_email = 'foo@alice.ru'    
+  config.alice_phone = '+7 (812) 331-14-60'
+  config.alice_phone1 = '+7 (921) 740-66-92'  
+  config.alice_email = 'sale@alice.ru'    
+  config.alice_title = 'Линолеум оптом'
   config.allow_guest_checkout = true
 end
 
