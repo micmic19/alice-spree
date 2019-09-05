@@ -1,7 +1,4 @@
 
 <div class="taxon col-sm-4">
-<%= link_to taxon_interior["image"], {target: "_blank"} do%>  
-  <%= image_tag taxon_interior["image"], alt: taxon_interior["title"] %>  
-  <div><%= taxon_interior["title"] %></div>
-<% end %>  
+	<%= link_to (image_tag taxon_interior["image"], alt: taxon_interior["title"]), taxon_interior["image"], :data => { :fancybox => 'gallery'} %>  
 </div>
