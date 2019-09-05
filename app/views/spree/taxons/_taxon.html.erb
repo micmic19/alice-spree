@@ -1,6 +1,8 @@
 
 <div class="taxon col-sm-4" data-hook="taxon">
   <h4 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs' %></h4>
-  <%#= taxon.description_ %>
-  <%= image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;' if taxon.icon %>
+    <%#= taxon.description_ %>
+  <% if taxon.icon %>
+  	<%= link_to (image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;'), seo_url(taxon) %>
+  <% end %>
 </div>
