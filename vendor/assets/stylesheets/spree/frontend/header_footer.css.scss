@@ -1,11 +1,18 @@
 
 #spree-header #header {
     background: rgba(34, 34, 34, 0.05);
+	padding: 10px 0;
 }
 
 #spree-header {
     background-color: white;
+	margin-bottom:5px;
 }
+
+
+#spree-header #logo {
+    margin-bottom: 0px;
+}	
 
 .desc_block h1 {
     font-size: 1.3em;
@@ -19,7 +26,13 @@
 }
 
 .navbar-form {
-   padding: 10px 10px;
+   padding: 0px;
+   margin-top: 0px;
+   margin-bottom:0px;
+}  
+
+.navbar-form .form-group{
+	margin-bottom: 0px;
 }  
 
 #content .taxon-description {
@@ -27,4 +40,18 @@
 }
 .taxon img {
     max-width: 100%;
+}
+
+#spree-header #logo img {
+    max-height: 6.5vmax;
+}
+
+#spree-header .navbar {
+    background-color: #00553cd6;
+	border-radius: 8px;
+	margin: 5px 0;
+}	
+
+.taxon-title{
+	margin: 10px 0;
 }
