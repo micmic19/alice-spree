@@ -12,9 +12,9 @@
 
     <div class="container">
       <div class="row" data-hook>
-		<div class="col-md-12 hidden-xs">
-        <%= spree_breadcrumbs(@taxon) %>
-		</div>
+    		<div class="col-md-12 hidden-xs">
+            <%= spree_breadcrumbs(@taxon) %>
+    		</div>
         <main
           id="content"
           class="mt-4 <%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-12 col-md-9" %>"
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div id="spree-footer">
-		<%= render partial: 'spree/shared/footer' %>	
+		  <%= render partial: 'spree/shared/footer' %>	
     </div>	
   </body>
 </html>
