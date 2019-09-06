@@ -1,14 +1,19 @@
 <footer id="footer" data-hook>
 	<div class="container">
 	  <div class="row">
-		<div class='col-md-2 col-xs-6'>
-			<h4><%= Spree::Config.alice_phone %></h4>
-			<h4><%= Spree::Config.alice_phone1 %></h4>			
+		<div class='col-md-4 col-xs-4'>
+			<h4><nobr><%= link_to Spree::Config.alice_phone, "tel:#{Spree::Config.alice_phone}" %></nobr></h4>
+			<h4><nobr><%= link_to Spree::Config.alice_phone1, "tel:#{Spree::Config.alice_phone1}" %></nobr></h4>
 		</div>
-		<div class='col-md-8 hidden-xs'>
+		<div class='col-md-4 col-xs-4'>
+			<h4>
+	        <% if Spree::Page.by_store(current_store).visible.footer_links.any? %>
+	          <%= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.visible.footer_links, as: :page %>
+	        <% end %>        
+	    	</h4>
 		</div>
-		<div class='col-md-2 col-xs-6'>
-		<%= render partial: 'spree/shared/link_to_cart' %>
+		<div class='col-md-4 col-xs-4'>
+			<%= render partial: 'spree/shared/link_to_cart' %>
 		</div>
 	  </div>
 	</div>

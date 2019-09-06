@@ -5,7 +5,7 @@
         <figure id="logo" class="col-md-2 col-xs-3" data-hook>
           <%= logo %>
         </figure>
-		<div class='desc_block col-md-2 hidden-xs'>
+		<div class='desc_block col-md-4 hidden-xs'>
 			<h1><%= Spree::Config.alice_title %></h1>
 			<div><%= mail_to Spree::Config.alice_email %></div>
 		</div>
@@ -13,12 +13,10 @@
 		<%= render partial: 'spree/shared/search' %>
 		</div>
 		<div class='desc_block col-md-2 hidden-xs'>
-			<h4><%= link_to Spree::Config.alice_phone, "tel:#{Spree::Config.alice_phone}" %></h4>
-			<h4><%= link_to Spree::Config.alice_phone1, "tel:#{Spree::Config.alice_phone1}" %></h4>
+			<h4><nobr><%= link_to Spree::Config.alice_phone, "tel:#{Spree::Config.alice_phone}" %></nobr></h4>
+			<h4><nobr><%= link_to Spree::Config.alice_phone1, "tel:#{Spree::Config.alice_phone1}" %></nobr></h4>
 		</div>
-		<div class='col-md-2 hidden-xs'>
-		<%= render partial: 'spree/shared/link_to_cart' %>
-		</div>
+
       </div>
     </div>
   </header>
