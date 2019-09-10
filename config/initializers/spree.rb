@@ -19,6 +19,7 @@ Spree.config do |config|
   config.alice_email = 'sale@alice.ru'    
   config.alice_title = 'Линолеум оптом'
   config.allow_guest_checkout = true
+  config.alice_step_option_id = 4
 end
 
 # Configure Spree Dependencies

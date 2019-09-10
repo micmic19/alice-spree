@@ -6,10 +6,12 @@
         <ul class="list-group">
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
             <li>
+              <% @step = variant.option_values.select { |a| a.option_type.id == Spree::Config.alice_step_option_id }.first %>
               <%= radio_button_tag "variant_id", variant.id, index == 0,
                   'data-price' => variant.price_in(current_currency).money,
                   'data-in-stock' => variant.can_supply?,
-                  'data-backordered' => variant.backordered?
+                  'data-backordered' => variant.backordered?,
+                  'data-step' => (@step.nil? ? "1" : @step[:name])
               %>
               <%= label_tag "variant_id_#{ variant.id }" do %>
                 <span class="variant-description">
@@ -80,3 +82,20 @@
     <% end %>
   </div>
 <% end %>
+
+<script>
+  function setStep() {
+    step = $('input[type=radio][name=variant_id]:checked').attr("data-step");
+    $("#quantity").prop("step", step);
+    $("#quantity").prop("value", step);
+    $("#quantity").prop("min", step);
+  };
+  
+  $(function() {
+    setStep();
+  });
+
+  $('input[type=radio][name=variant_id]').change(function() {
+    setStep();
+  });
+</script>
