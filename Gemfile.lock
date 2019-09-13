@@ -19,6 +19,15 @@ GIT
       spree_core (>= 3.1.0, < 5.0)
       spree_extension
 
+GIT
+  remote: https://github.com/stefansenk/spree_product_files.git
+  revision: aa4e1b910cdb7708226e15adf881570fb922ac83
+  specs:
+    spree_product_files (3.7.0)
+      spree_backend (>= 3.2.0, < 4.0)
+      spree_core (>= 3.2.0, < 4.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -474,6 +483,7 @@ DEPENDENCIES
   spree_auth_devise (~> 3.5)
   spree_gateway (~> 3.4)
   spree_i18n!
+  spree_product_files!
   spree_static_content!
   spring
   spring-watcher-listen (~> 2.0.0)

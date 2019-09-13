@@ -21,12 +21,17 @@
         <% end %>        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Каталог<span class="caret"></span></a>
+          <% @taxonomies ? @taxonomies : @taxonomies = Spree::Taxonomy.includes(root: :children) %>            
           <ul class="dropdown-menu">
-            <% @taxonomies ? @taxonomies : @taxonomies = Spree::Taxonomy.includes(root: :children) %>            
             <% @taxonomies.each do |taxonomy| %>
               <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
                 <% if taxonomy.root.children.any? %>
-                   <li><a href='<%= seo_url(taxonomy.root)%>'><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></a></li>
+                  <li class="dropdown dropdown-submenu"><a href="<%= seo_url(taxonomy.root)%>" class="dropdown-toggle" data-toggle="dropdown"><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></a>
+                    <ul class="dropdown-menu">                    
+                      <% @first_c = Spree::Taxonomy.find_by(name: Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name)).root.children %>
+                      <%= render partial: 'spree/taxons/taxon_dropdown', collection: @first_c %>
+                    </ul>
+                  </li>
                 <% end %>
               <% end %>
             <% end %>

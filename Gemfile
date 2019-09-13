@@ -76,3 +76,4 @@ gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 gem "nokogiri", ">= 1.10.4"
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'cookies_eu'
+gem 'spree_product_files', github: 'stefansenk/spree_product_files'
