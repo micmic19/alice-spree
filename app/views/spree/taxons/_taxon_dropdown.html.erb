@@ -1,0 +1,9 @@
+<% if taxon_dropdown.children.any? %>
+	<li class="dropdown dropdown-submenu"><a href="<%= seo_url(taxon_dropdown)%>" class="dropdown-toggle" data-toggle="dropdown"><%= taxon_dropdown.name %></a>
+		<ul class="dropdown-menu">
+			<%=render partial: 'spree/taxons/taxon_dropdown', collection: taxon_dropdown.children %>
+		</ul>
+	</li>
+<% else %>
+	<li><a href='<%= seo_url(taxon_dropdown)%>'><%= taxon_dropdown.name %></a></li>
+<% end %>
