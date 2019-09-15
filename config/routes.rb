@@ -9,24 +9,4 @@ Rails.application.routes.draw do
   # the default of "spree".
   mount Spree::Core::Engine, at: '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  namespace :admin do
-    resources :taxonomies do  
-		resources :taxons do
-		  resources :taxon_certificates do
-			collection do
-			  post :update_positions
-			end
-		  end
-		end
-	end
-  end
-  namespace :api, defaults: { format: 'json' } do
-    namespace :v1 do
-      resources :taxonomies do
-		resources :taxons do	  
-			resources :taxon_certificates
-		end
-      end
-    end
-  end
 end

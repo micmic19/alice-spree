@@ -1,8 +1,4 @@
 
-<ul class="taxon_interiors">
-  <% @taxon.interiors.each do |interior| %>
-    <li>
-	  <%= image_tag main_app.url_for(interior.try(:attachment)), style: 'height:170px;width:auto;' if interior.try(:attachment) %>
-    </li>
-  <% end %>
-</ul>
+<div class="taxon col-sm-4">
+	<%= link_to (image_tag taxon_interior["image"], alt: taxon_interior["title"]), taxon_interior["image"], :data => { :fancybox => 'gallery'} %>  
+</div>

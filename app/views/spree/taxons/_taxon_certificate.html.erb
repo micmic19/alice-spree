@@ -1,9 +1,7 @@
 
-<ul class="taxon_certificates">
-  <% @taxon.certificates.each do |certificate| %>
-    <li>
-	  <%= image_tag main_app.url_for(certificate.try(:attachment)), style: 'height:170px;width:auto;' if certificate.try(:attachment) %>
-    </li>
-  <% end %>
-</ul>
-
+<div class="taxon col-sm-4">
+	<%= link_to taxon_certificate["file"], {target: "_blank"} do %>  
+	  <%= image_tag taxon_certificate["image"], alt: taxon_certificate["title"] %>  
+	  <div><%= taxon_certificate["title"] %></div>
+	<% end %>  
+</div>
