@@ -26,13 +26,20 @@
         <%= f.file_field :icon %>
       <% end %>
     </div>
-
     <div class="col-xs-12 col-md-7">
       <%= f.field_container :description, class: ['form-group'] do %>
         <%= f.label :description, Spree.t(:description) %>
         <%= f.text_area :description, class: 'form-control', rows: 6 %>
       <% end %>
     </div>
+  </div>
+  <div class="row">
+	<H4>Сертификаты</H4>
+	<%= render partial: "/spree/admin/taxons/taxon_certificate"%>
+  </div>
+  <div class="row">
+	<H4>В интерьере</H4>
+	<%#= render partial: "/spree/admin/taxons/taxon_interior", collection: @taxon.interiors %>
   </div>
 
   <%= f.field_container :meta_title, class: ['form-group'] do %>

@@ -1,0 +1,47 @@
+<%= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to(Spree.t(:new_taxon_certificate), spree.new_admin_taxonomy_taxon_taxon_certificate_path(@taxon), { class: "btn-success", icon: 'add', id: 'new_taxon_certificate_link' }) if can? :create, Spree::TaxonCertificate %>
+<% end %>
+
+<% if @taxon.certificates.empty? %>
+  <div class="alert alert-warning no-objects-found">
+    <%= Spree.t(:no_taxon_certificates) %>
+  </div>
+<% else %>
+
+  <table class="table sortable" data-hook="taxon_certificates_table" data-sortable-link="<%= update_positions_admin_taxonomy_taxon_taxon_certificates_path(@taxon) %>">
+    <thead>
+      <tr data-hook="taxon_certificates_header">
+        <th colspan="2">
+          <%= Spree.t(:taxon_certificate) %>
+        </th>
+        <th>
+          <%= Spree.t(:name) %>
+        </th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @taxon.certificates.each do |certificate| %>
+        <tr id="<%= spree_dom_id certificate %>" data-hook="certificates_row">
+          <td class="move-handle text-center">
+            <% if can? :edit, certificate %>
+              <span class="icon icon-move handle"></span>
+            <% end %>
+          </td>
+          <td class="certificate">
+            <%= link_to certificate.attachment.filename, main_app.rails_blob_path(certificate.attachment, disposition: "attachment") %>
+          </td>
+          <td><%= certificate.alt %></td>
+          <td class="actions actions-2 text-right">
+            <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_taxonomy_taxon_taxon_certificate_path(@taxon, certificate), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, certificate %>
+            <%= link_to_delete(certificate, { url: spree.admin_product_product_file_url(@product, certificate), no_text: true }) if can? :destroy, certificate %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
