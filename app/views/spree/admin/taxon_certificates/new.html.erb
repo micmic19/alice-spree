@@ -1,12 +1,11 @@
-<%= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
+<%#= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
 
 <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @taxon } %>
 
 <% content_for :page_title do %>
   <%= Spree.t(:new_certificate) %>
 <% end %>
-
-<%= form_for [:admin, @taxon, @certificate], html: { multipart: true } do |f| %>
+<%= form_for [:admin, @taxonomy, @taxon, @taxon_certificate], html: { multipart: true } do |f| %>
   <fieldset data-hook="new_image">
     <%= render partial: 'form', locals: { f: f } %>
 

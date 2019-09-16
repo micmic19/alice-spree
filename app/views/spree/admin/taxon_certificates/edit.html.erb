@@ -1,8 +1,8 @@
-<%= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
+<%#= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
 
 <%= render partial: 'spree/admin/shared/error_messages', locals: { target: @taxon_certificate } %>
 
-<%= form_for [:admin, @taxon, @taxon_certificate], html: { multipart: true } do |f| %>
+<%= form_for [:admin, @taxonomy, @taxon, @taxon_certificate], html: { multipart: true } do |f| %>
   <div data-hook="edit_taxon_certificate" class="panel panel-default">
     <div class="panel-heading">
       <h1 class="panel-title">
@@ -22,9 +22,10 @@
         <div class="form-actions" data-hook="buttons">
           <%= button Spree.t('actions.update'), 'save' %>
           <span class="or"><%= Spree.t(:or) %></span>
-          <%= button_link_to Spree.t('actions.cancel'), spree.admin_taxonomy_taxon_taxon_certificates_path(@product), id: 'cancel_link', icon: 'delete' %>
+          <%= button_link_to Spree.t('actions.cancel'), spree.admin_taxonomy_taxon_taxon_certificates_url(@taxonomy, @taxon), id: 'cancel_link', icon: 'delete' %>
         </div>
       </div>
     </div>
   </div>
 <% end %>
+

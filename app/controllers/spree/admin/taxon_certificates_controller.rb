@@ -7,9 +7,6 @@ module Spree
       create.before :set_viewable
       update.before :set_viewable
       create.fails :set_flash_error_messages_from_object
-      def index
-        "coming soon"
-      end
 
       private
 
@@ -18,6 +15,7 @@ module Spree
       end
 
       def location_after_save
+		#edit_admin_taxonomy_taxon_url(@taxon)
         admin_taxonomy_taxon_taxon_certificates_url(@taxon)
       end
 
@@ -27,11 +25,12 @@ module Spree
 
       def load_edit_data
         @taxon = Taxon.friendly.find(params[:taxon_id])
+		@taxonomy = Spree::Taxonomy.find(@taxon.taxonomy_id)
       end
 
       def set_viewable
-        @product_file.viewable_type = 'Spree::Taxon'
-        @product_file.viewable_id = @taxon.id
+        @taxon_certificate.viewable_type = 'Spree::Taxon'
+        @taxon_certificate.viewable_id = @taxon.id
       end
 
       def variant_index_includes
