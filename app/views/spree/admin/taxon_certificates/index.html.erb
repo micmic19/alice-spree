@@ -1,4 +1,4 @@
-<%= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
+<%#= render partial: 'spree/admin/shared/product_tabs', locals: { current: :certificates } %>
 
 <% content_for :page_actions do %>
   <%= button_link_to(Spree.t(:new_taxon_certificate), spree.new_admin_taxonomy_taxon_taxon_certificate_path(@taxon), { class: "btn-success", icon: 'add', id: 'new_taxon_certificate_link' }) if can? :create, Spree::TaxonCertificate %>
@@ -36,8 +36,8 @@
           </td>
           <td><%= certificate.alt %></td>
           <td class="actions actions-2 text-right">
-            <%= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_taxonomy_taxon_taxon_certificate_path(@taxon, certificate), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, certificate %>
-            <%= link_to_delete(certificate, { url: spree.admin_product_product_file_url(@product, certificate), no_text: true }) if can? :destroy, certificate %>
+            <%#= link_to_with_icon('edit', Spree.t(:edit), spree.edit_admin_taxonomy_taxon_taxon_certificate_url(@taxonomy, @taxon, certificate), class: 'btn btn-primary btn-sm', no_text: true, data: { action: 'edit' }) if can? :edit, certificate %>
+            <%#= link_to_delete(certificate, { url: spree.admin_product_product_file_url(@product, certificate), no_text: true }) if can? :destroy, certificate %>
           </td>
         </tr>
       <% end %>
