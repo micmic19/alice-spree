@@ -1,8 +1,9 @@
 module Spree
   class TaxonInterior < Asset
-    #include Configuration::ActiveStorage
+    include Configuration::ActiveStorage
     include Rails.application.routes.url_helpers
 
+	self.inheritance_column = nil
     def styles
       self.class.styles.map do |_, size|
         width, height = size[/(\d+)x(\d+)/].split('x')

@@ -1,6 +1,6 @@
 module Spree
   module Admin
-    class TaxonCertificatesController < ResourceController
+    class TaxonInteriorsController < ResourceController
       before_action :load_edit_data, except: :index
       before_action :load_index_data, only: :index
 
