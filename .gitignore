@@ -32,3 +32,5 @@
 # /config/initializers/devise.rb
 _Gemfile.lock
 _Gemfile
+db/schema.rb
+Gemfile.lock
