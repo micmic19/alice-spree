@@ -10,3 +10,36 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+Spree::Core::Engine.add_routes do
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      # Our new route goes here!
+      resources :sales, only: [:index]
+    end
+  end
+
+  namespace :admin do
+    resources :taxonomies do  
+		resources :taxons do
+		  resources :taxon_certificates, :path => "certificates" do
+			collection do
+			  post :update_positions
+			end
+		  end
+		end
+	end
+  end
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :taxonomies do
+		resources :taxons do	  
+			resources :taxon_certificates, :path => "certificates"
+		end
+      end
+    end
+  end
+  
+end
