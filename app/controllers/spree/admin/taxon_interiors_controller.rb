@@ -33,8 +33,8 @@ module Spree
       end
 
       def set_viewable
-        @taxon_certificate.viewable_type = 'Spree::Taxon'
-        @taxon_certificate.viewable_id = @taxon.id
+        @taxon_interior.viewable_type = 'Spree::Taxon'
+        @taxon_interior.viewable_id = @taxon.id
       end
 
       def variant_index_includes
