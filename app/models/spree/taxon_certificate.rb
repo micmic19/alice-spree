@@ -2,8 +2,7 @@ module Spree
   class TaxonCertificate < Asset
     include Configuration::ActiveStorage
 	include Rails.application.routes.url_helpers
-	#validate :check_attachment_presence	
-    #has_one_attached :attachment
+
 	self.inheritance_column = nil
     def styles
       self.class.styles.map do |_, size|

@@ -13,17 +13,22 @@ end
 
 Spree::Core::Engine.add_routes do
 
-  namespace :api, defaults: { format: 'json' } do
-    namespace :v1 do
-      # Our new route goes here!
-      resources :sales, only: [:index]
-    end
+  namespace :admin do
+    resources :taxonomies do  
+		resources :taxons do
+		  resources :taxon_certificates, :path => "certificates" do
+			collection do
+			  post :update_positions
+			end
+		  end
+		end
+	end
   end
 
   namespace :admin do
     resources :taxonomies do  
 		resources :taxons do
-		  resources :taxon_certificates, :path => "certificates" do
+		  resources :taxon_interiors, :path => "interiors" do
 			collection do
 			  post :update_positions
 			end
