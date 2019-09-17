@@ -34,3 +34,5 @@ _Gemfile.lock
 _Gemfile
 db/schema.rb
 Gemfile.lock
+db/schema.rb
+Gemfile.lock
