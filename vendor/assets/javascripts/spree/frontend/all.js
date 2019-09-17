@@ -13,3 +13,4 @@
 //= require spree/frontend/spree_auth
 //= require spree/frontend/spree_i18n
 //= require cookies_eu
+//= require spree/frontend/spree_blogging_spree

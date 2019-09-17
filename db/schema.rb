@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_121955) do
+ActiveRecord::Schema.define(version: 2019_09_13_134048) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -105,6 +105,21 @@ ActiveRecord::Schema.define(version: 2019_06_28_121955) do
     t.index ["position"], name: "index_spree_assets_on_position"
     t.index ["viewable_id"], name: "index_assets_on_viewable_id"
     t.index ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+  end
+
+  create_table "spree_blog_entries", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean "visible", default: false
+    t.datetime "published_at"
+    t.text "summary"
+    t.integer "author_id"
+    t.string "meta_description"
+    t.string "meta_keywords"
+    t.index ["author_id"], name: "index_spree_blog_entries_on_author_id"
   end
 
   create_table "spree_calculators", force: :cascade do |t|
@@ -1094,6 +1109,10 @@ ActiveRecord::Schema.define(version: 2019_06_28_121955) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string "nickname"
+    t.string "website_url"
+    t.string "google_plus_url"
+    t.text "bio_info"
     t.index ["bill_address_id"], name: "index_spree_users_on_bill_address_id"
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at"
     t.index ["email"], name: "email_idx_unique", unique: true
@@ -1148,6 +1167,24 @@ ActiveRecord::Schema.define(version: 2019_06_28_121955) do
     t.string "kind"
     t.index ["default_tax"], name: "index_spree_zones_on_default_tax"
     t.index ["kind"], name: "index_spree_zones_on_kind"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer "tag_id"
+    t.string "taggable_type"
+    t.integer "taggable_id"
+    t.string "tagger_type"
+    t.integer "tagger_id"
+    t.string "context", limit: 128
+    t.datetime "created_at"
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
 end

@@ -77,3 +77,4 @@ gem "nokogiri", ">= 1.10.4"
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'cookies_eu'
 gem 'spree_product_files', github: 'stefansenk/spree_product_files'
+gem 'spree_blogging_spree', github: 'MatthewKennedy/spree-blogging-spree'

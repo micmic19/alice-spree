@@ -11,3 +11,4 @@
 //= require_tree .
 //= require spree/backend/spree_i18n
 //= require spree/backend/spree_product_files
+//= require spree/backend/spree_blogging_spree

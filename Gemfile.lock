@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/MatthewKennedy/spree-blogging-spree.git
+  revision: 877a90a93f6448ad0f6d127c93cedd634c3bed2b
+  specs:
+    spree_blogging_spree (3.0.0)
+      acts-as-taggable-on
+      rails
+      spree_core (~> 3.3)
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: b230796ed58cd6fe8197b4acdeea9ab89f3070ef
   specs:
@@ -481,6 +490,7 @@ DEPENDENCIES
   selenium-webdriver
   spree (~> 3.7.0)
   spree_auth_devise (~> 3.5)
+  spree_blogging_spree!
   spree_gateway (~> 3.4)
   spree_i18n!
   spree_product_files!
