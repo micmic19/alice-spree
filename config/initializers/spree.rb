@@ -41,3 +41,4 @@ Spree::Auth::Config[:registration_step] = false
 #ALICE
 Spree::Config[:layout] = 'application'
 Spree::Frontend::Config[:coupon_codes_enabled] = false
+Spree::PermittedAttributes.taxon_attributes << :taxon_props
