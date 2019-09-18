@@ -24,7 +24,7 @@ module Spree
           end
 
           def accepted_image_types
-            %w(image/jpeg image/jpg image/png image/gif)
+            %w(image/jpeg image/jpg image/png image/gif application/pdf application/zip)
           end
 
           def check_attachment_presence
