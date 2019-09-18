@@ -34,6 +34,13 @@
     </div>
   </div>
   <div class="row">
+    <%= f.field_container :taxon_props, class: ['form-group'] do %>
+      <%= f.label :taxon_props, Spree.t(:taxon_props) %>
+      <%= f.text_area :taxon_props, class: 'form-control', rows: 6 %>
+    <% end %>
+  </div>
+
+  <div class="row">
 	<H3>Сертификаты</H3>
 	<%= render partial: "/spree/admin/taxons/taxon_certificate" %>
   </div>

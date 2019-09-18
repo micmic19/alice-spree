@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_13_134048) do
+ActiveRecord::Schema.define(version: 2019_09_18_125851) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -1061,6 +1061,7 @@ ActiveRecord::Schema.define(version: 2019_09_13_134048) do
     t.string "meta_description"
     t.string "meta_keywords"
     t.integer "depth"
+    t.text "taxon_props"
     t.index ["lft"], name: "index_spree_taxons_on_lft"
     t.index ["name"], name: "index_spree_taxons_on_name"
     t.index ["parent_id"], name: "index_taxons_on_parent_id"
