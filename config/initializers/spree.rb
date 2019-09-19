@@ -20,6 +20,7 @@ Spree.config do |config|
   config.alice_title = 'Линолеум оптом'
   config.allow_guest_checkout = true
   config.alice_step_option_id = 4
+  config.alice_certimg = '/cert.jpg'
 end
 
 # Configure Spree Dependencies
