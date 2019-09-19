@@ -1,9 +1,23 @@
-
-<ul class="taxon_certificates">
-  <% @taxon.certificates.each do |certificate| %>
-    <li>
-	  <%= image_tag main_app.url_for(certificate.try(:attachment)), style: 'height:170px;width:auto;' if certificate.try(:attachment) %>
-    </li>
-  <% end %>
-</ul>
-
+<div id="taxon_certificate_<%= taxon_certificate.id %>" class="col-md-3 col-sm-6 product-list-item" data-hook="taxon_certificate_list_item" itemscope itemtype="https://schema.org/Product">
+  <div class="panel panel-default">
+      <div class="panel-body text-center product-body">
+        <% if %w(application/pdf application/zip).include?(taxon_certificate.attachment.content_type) %>
+              <%= link_to image_tag(Spree::Config.alice_certimg), main_app.rails_blob_path(taxon_certificate.attachment), target: "_blank" %>
+            <% else %>
+              <%= link_to image_tag(main_app.url_for(taxon_certificate.url(:medium))), main_app.url_for(taxon_certificate.url(:extralarge)), :data => { :fancybox => 'gallery'} %>
+            <% end %>
+        <br/>
+      </div>
+      <div class="panel-footer text-center">
+        <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span class="price selling lead">
+        	<% if %w(application/pdf application/zip).include?(taxon_certificate.attachment.content_type) %>
+        		<%= link_to taxon_certificate.alt, main_app.rails_blob_path(taxon_certificate.attachment), target: "_blank" %>
+           	<% else %>
+           		<%= link_to taxon_certificate.alt, main_app.url_for(taxon_certificate.url(:extralarge)), :data => { :fancybox => 'gallery'} %>
+            <% end %>
+          </span>
+        </span>
+      </div>
+  </div>
+</div>
