@@ -28,7 +28,7 @@
 		</div>	  
 		<div id="panel2" class="tab-pane fade">
 			<h3>Технические характеристики</h3>
-			<div class="row">
+			<div class="gal">
 				<div class="taxon col-sm-4">ТЕХНИЧЕСКИЕ ДАННЫЕ</div>
 				<div class="taxon col-sm-4">ЗНАЧЕНИЯ</div>
 				<div class="taxon col-sm-4">СТАНДАРТЫ</div>
@@ -43,7 +43,16 @@
 		</div>
 		<div id="panel4" class="tab-pane fade">
 			<h3>В интерьере</h3>
-			<%= render partial: 'taxon_interior', collection: @taxon.interiors %>			
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<hr />
+						<div class="gal">
+							<%= render partial: 'taxon_interior', collection: @taxon.interiors %>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>		
 	  </div>
       <%= render partial: '/spree/taxons/taxon_description', locals: { taxon: @taxon } %>
