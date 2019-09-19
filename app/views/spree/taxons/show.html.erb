@@ -33,8 +33,12 @@
 				<div class="taxon col-sm-4">ЗНАЧЕНИЯ</div>
 				<div class="taxon col-sm-4">СТАНДАРТЫ</div>
 			</div>	
-			<div class="container legend">		
-				<%= render partial: 'taxon_property', collection: @taxon.properties %>
+			<div class="container legend">
+				<% if @taxon.properties.first["name"].present? %>
+					<%= render partial: 'taxon_property', collection: @taxon.properties %>
+				<% elsif @taxon.properties.present? %>
+					<%= render partial: 'taxon_property_one', locals: { taxon_property_one: @taxon.properties } %>
+				<% end %>
 			</div>
 		</div>
 		<div id="panel3" class="tab-pane fade">
