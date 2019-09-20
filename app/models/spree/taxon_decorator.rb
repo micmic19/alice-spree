@@ -2,19 +2,22 @@
 Spree::Taxon.class_eval do
 	has_many :certificates, as: :viewable, dependent: :destroy, class_name: 'Spree::TaxonCertificate'
 	has_many :interiors, as: :viewable, dependent: :destroy, class_name: 'Spree::TaxonInterior'
-    def description_
-		parse_description "description"
-    end
-    def properties
-		parse_description "properties"
-    end
+
+  def properties
+		parse_taxon_props "properties"
+  end
+
 	private
-	def parse_description param 
+	def parse_taxon_props param 
 		begin
-			data = ActiveSupport::JSON.decode(self.description)
-			data[param]
+      if self.taxon_props.nil?
+        return ''
+      else
+			 data = ActiveSupport::JSON.decode(self.taxon_props)
+			 data[param]
+      end
 		rescue JSON::ParserError
-			data = {"description"=>self.description}
+			data = {"properties"=>self.taxon_props}
 			data[param]
 		end
 	end

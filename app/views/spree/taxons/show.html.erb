@@ -28,13 +28,17 @@
 		</div>	  
 		<div id="panel2" class="tab-pane fade">
 			<h3>Технические характеристики</h3>
-			<div class="row">
+			<div class="gal">
 				<div class="taxon col-sm-4">ТЕХНИЧЕСКИЕ ДАННЫЕ</div>
 				<div class="taxon col-sm-4">ЗНАЧЕНИЯ</div>
 				<div class="taxon col-sm-4">СТАНДАРТЫ</div>
 			</div>	
-			<div class="container legend">		
-				<%= render partial: 'taxon_property', collection: @taxon.properties %>
+			<div class="container legend">
+				<% if @taxon.properties.first["name"].present? %>
+					<%= render partial: 'taxon_property', collection: @taxon.properties %>
+				<% elsif @taxon.properties.present? %>
+					<%= render partial: 'taxon_property_one', locals: { taxon_property_one: @taxon.properties } %>
+				<% end %>
 			</div>
 		</div>
 		<div id="panel3" class="tab-pane fade">
@@ -43,7 +47,16 @@
 		</div>
 		<div id="panel4" class="tab-pane fade">
 			<h3>В интерьере</h3>
-			<%= render partial: 'taxon_interior', collection: @taxon.interiors %>			
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<hr />
+						<div class="gal">
+							<%= render partial: 'taxon_interior', collection: @taxon.interiors %>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>		
 	  </div>
       <%= render partial: '/spree/taxons/taxon_description', locals: { taxon: @taxon } %>

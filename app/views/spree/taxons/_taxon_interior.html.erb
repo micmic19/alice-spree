@@ -1,8 +1,1 @@
-
-<ul class="taxon_interiors">
-  <% @taxon.interiors.each do |interior| %>
-    <li>
-	  <%= image_tag main_app.url_for(interior.try(:attachment)), style: 'height:170px;width:auto;' if interior.try(:attachment) %>
-    </li>
-  <% end %>
-</ul>
+<%= link_to image_tag(main_app.url_for(taxon_interior.try(:attachment))), main_app.url_for(taxon_interior.try(:attachment)), :data => {:fancybox => 'gallery'} if taxon_interior.try(:attachment) %>
