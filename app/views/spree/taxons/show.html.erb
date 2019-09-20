@@ -27,17 +27,22 @@
 			</div>
 		</div>	  
 		<div id="panel2" class="tab-pane fade">
-			<div class="container legend">
+			<div class="container">
 				<% if @taxon.properties.first["name"].present? %>
-					<div class="row">
-						<h4>
-							<div class="taxon col-md-4 col-sm-6 col-xs-12">ТЕХНИЧЕСКИЕ ДАННЫЕ</div>
-							<div class="taxon col-md-4 col-sm-6 col-xs-12">ЗНАЧЕНИЯ</div>
-							<div class="taxon col-md-4 col-sm-6 col-xs-12">СТАНДАРТЫ</div>
-						</h4>
-					</div>
-					<%= render partial: 'taxon_property', collection: @taxon.properties %>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>ТЕХНИЧЕСКИЕ ДАННЫЕ</th>
+								<th>ЗНАЧЕНИЯ</th>
+								<th>СТАНДАРТЫ</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%= render partial: 'taxon_property', collection: @taxon.properties %>
+						</tbody>
+					</table>
 				<% elsif @taxon.properties.present? %>
+					<br />
 					<%= render partial: 'taxon_property_one', locals: { taxon_property_one: @taxon.properties } %>
 				<% end %>
 			</div>
@@ -50,7 +55,7 @@
 			<div class="container">
 				<div class="col-md-12">
 					<div class="row">
-						<hr />
+						<br />
 						<div class="gal">
 							<%= render partial: 'taxon_interior', collection: @taxon.interiors %>
 						</div>
