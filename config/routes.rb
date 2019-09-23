@@ -46,5 +46,15 @@ Spree::Core::Engine.add_routes do
       end
     end
   end
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :taxonomies do
+		resources :taxons do	  
+			resources :taxon_interiors, :path => "interiors"
+		end
+      end
+    end
+  end
   
 end

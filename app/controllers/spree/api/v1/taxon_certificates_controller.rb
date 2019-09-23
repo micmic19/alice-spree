@@ -4,41 +4,40 @@ module Spree
       class TaxonCertificatesController < Spree::Api::BaseController
 
         def index
-          @taxon = Spree::Taxon.find(params[:taxon_id])
-		  @taxon_сertificates = @taxon.certificates.accessible_by(current_ability, :read)
+		  @taxon_сertificates = scope.certificates.accessible_by(current_ability, :read)
           respond_with(@taxon_сertificates)
         end
 
         def show
-          @product_file = ProductFile.accessible_by(current_ability, :read).find(params[:id])
-          respond_with(@product_file)
+          @taxon_сertificate = TaxonCertificate.accessible_by(current_ability, :read).find(params[:id])
+          respond_with(@taxon_сertificate)
         end
 
         def new; end
 
         def create
-          authorize! :create, ProductFile
-          @product_file = scope.product_files.new(product_file_params)
-          if @product_file.save
-            respond_with(@product_file, status: 201, default_template: :show)
+          authorize! :create, TaxonCertificate
+          @taxon_сertificate = scope.certificates.new(product_file_params)
+          if @taxon_сertificate.save
+            respond_with(@taxon_сertificate, status: 201, default_template: :show)
           else
-            invalid_resource!(@product_file)
+            invalid_resource!(@taxon_сertificate)
           end
         end
 
         def update
-          @product_file = scope.product_files.accessible_by(current_ability, :update).find(params[:id])
-          if @product_file.update_attributes(product_file_params)
-            respond_with(@product_file, default_template: :show)
+          @taxon_сertificate = TaxonCertificate.accessible_by(current_ability, :update).find(params[:id])
+          if @taxon_сertificate.update_attributes(product_file_params)
+            respond_with(@taxon_сertificate, default_template: :show)
           else
-            invalid_resource!(@product_file)
+            invalid_resource!(@taxon_сertificate)
           end
         end
 
         def destroy
-          @product_file = scope.product_files.accessible_by(current_ability, :destroy).find(params[:id])
-          @product_file.destroy
-          respond_with(@product_file, status: 204)
+          @taxon_сertificate = scope.certificates.accessible_by(current_ability, :destroy).find(params[:id])
+          @taxon_сertificate.destroy
+          respond_with(@taxon_сertificate, status: 204)
         end
 
         private
@@ -48,14 +47,13 @@ module Spree
         end
 
         def product_file_params
-          params.require(:product_file).permit(permitted_product_file_attributes)
+		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
+          params.require(:image).permit(permitted_product_file_attributes)
         end
 
         def scope
-          if params[:product_id]
-            Spree::Product.friendly.find(params[:product_id])
-          elsif params[:variant_id]
-            Spree::Variant.find(params[:variant_id])
+          if params[:taxon_id]
+			Spree::Taxon.find(params[:taxon_id])
           end
         end
       end
