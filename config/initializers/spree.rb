@@ -21,6 +21,9 @@ Spree.config do |config|
   config.allow_guest_checkout = true
   config.alice_step_option_id = 4
   config.alice_certimg = '/cert.jpg'
+  config.currency = 'RUB'
+  country = Spree::Country.find_by_name('Russian Federation')
+  config.default_country_id = country.id if country.present?
 end
 
 # Configure Spree Dependencies
