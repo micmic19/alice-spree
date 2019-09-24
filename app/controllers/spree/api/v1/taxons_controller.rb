@@ -48,14 +48,13 @@ module Spree
 
         def update
           authorize! :update, taxon
-		  
+		  taxon.build_icon(attachment: taxon_icon_params[:attachment]) if params[:image]	  
           if taxon.update(taxon_params)
             respond_with(taxon, status: 200, default_template: :show)
           else
             invalid_resource!(taxon)
           end
-		  taxon.icon.update_attributes(taxon_icon_params) if params[:image]
-		  
+  
         end
 
         def destroy
