@@ -46,3 +46,4 @@ Spree::Auth::Config[:registration_step] = false
 Spree::Config[:layout] = 'application'
 Spree::Frontend::Config[:coupon_codes_enabled] = false
 Spree::PermittedAttributes.taxon_attributes << :taxon_props
+Spree::FiltersConfiguration::Config.allowed_sortings += [:descend_by_updated_at, :ascend_by_master_price, :descend_by_master_price, :ascend_by_name, :descend_by_name]

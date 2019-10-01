@@ -14,3 +14,5 @@
 //= require spree/frontend/spree_i18n
 //= require cookies_eu
 //= require spree/frontend/spree_blogging_spree
+//= require spree/frontend/filters_all
+//= require jquery-ui

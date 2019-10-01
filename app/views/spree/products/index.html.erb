@@ -1,4 +1,8 @@
 <% if "spree/products" == params[:controller] && @taxon || @taxonomies.present? %>
+    <div data-hook="advanced_filters">
+    <%= render 'spree/shared/advanced_filters'%>
+  </div>
+
   <% content_for :sidebar do %>
     <div data-hook="homepage_sidebar_navigation">
       <% if "spree/products" == params[:controller] && @taxon %>

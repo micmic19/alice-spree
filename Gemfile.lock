@@ -8,6 +8,15 @@ GIT
       spree_core (~> 3.3)
 
 GIT
+  remote: https://github.com/micmic19/spree_products_filters.git
+  revision: 7145ba61ebb4bb46682d2f602485128a43be5169
+  specs:
+    spree_products_filters (0.3.0)
+      haml
+      jquery-ui-rails
+      spree_core (~> 3.7.0)
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: b230796ed58cd6fe8197b4acdeea9ab89f3070ef
   specs:
@@ -67,7 +76,7 @@ GEM
     activejob (5.2.3)
       activesupport (= 5.2.3)
       globalid (>= 0.3.6)
-    activemerchant (1.98.0)
+    activemerchant (1.99.0)
       activesupport (>= 4.2)
       builder (>= 2.1.2, < 4.0.0)
       i18n (>= 0.6.9)
@@ -176,7 +185,7 @@ GEM
       devise (>= 2.1.0)
     doorkeeper (5.2.1)
       railties (>= 5)
-    erubi (1.8.0)
+    erubi (1.9.0)
     execjs (2.7.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
@@ -186,6 +195,9 @@ GEM
       activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    haml (5.1.2)
+      temple (>= 0.8.0)
+      tilt
     highline (2.0.2)
     htmlentities (4.3.4)
     i18n (1.6.0)
@@ -221,7 +233,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.2.3)
+    loofah (2.3.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -236,7 +248,7 @@ GEM
     mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.12.0)
+    minitest (5.12.2)
     monetize (1.9.2)
       money (~> 6.12)
     money (6.13.4)
@@ -245,7 +257,7 @@ GEM
     net-scp (2.0.0)
       net-ssh (>= 2.6.5, < 6.0.0)
     net-ssh (5.2.0)
-    nio4r (2.5.1)
+    nio4r (2.5.2)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
@@ -431,6 +443,7 @@ GEM
       activerecord (>= 4.1)
       state_machines-activemodel (>= 0.5.0)
     stringex (2.8.5)
+    temple (0.8.2)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     thor (0.20.3)
@@ -495,6 +508,7 @@ DEPENDENCIES
   spree_gateway (~> 3.4)
   spree_i18n!
   spree_product_files!
+  spree_products_filters!
   spree_static_content!
   spring
   spring-watcher-listen (~> 2.0.0)
