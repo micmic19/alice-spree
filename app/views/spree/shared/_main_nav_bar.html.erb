@@ -20,6 +20,7 @@
           <%= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.visible.header_links, as: :page %>
         <% end %>        
         <li><a href="/blog">Новости</a></li>
+        <li><%= link_to "Подбор по параметрам", :controller => :products, :action => :index %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Каталог<span class="caret"></span></a>
           <% @taxonomies ? @taxonomies : @taxonomies = Spree::Taxonomy.includes(root: :children) %>            
