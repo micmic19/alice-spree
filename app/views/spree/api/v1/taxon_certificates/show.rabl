@@ -1,4 +1,4 @@
-object @taxon_сertificate
+object @taxon_certificate
 attributes *taxon_certificate_attributes
 attributes :viewable_type, :viewable_id
 #Spree::TaxonCertificate.styles.each do |k, _v|

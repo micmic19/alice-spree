@@ -6,40 +6,40 @@ module Spree
         helper ::SpreeApiV1TaxonCertificatesHelper
 
         def index
-		  @taxon_сertificates = scope.certificates.accessible_by(current_ability, :read)
-          respond_with(@taxon_сertificates)
+		  @taxon_certificates = scope.certificates.accessible_by(current_ability, :read)
+          respond_with(@taxon_certificates)
         end
 
         def show
-          @taxon_сertificate = TaxonCertificate.accessible_by(current_ability, :read).find(params[:id])
-          respond_with(@taxon_сertificate)
+          @taxon_certificate = TaxonCertificate.accessible_by(current_ability, :read).find(params[:id])
+          respond_with(@taxon_certificate)
         end
 
         def new; end
 
         def create
           authorize! :create, TaxonCertificate
-          @taxon_сertificate = scope.certificates.new(taxon_certificate_params)
-          if @taxon_сertificate.save
-            respond_with(@taxon_сertificate, status: 201, default_template: :show)
+          @taxon_certificate = scope.certificates.new(taxon_certificate_params)
+          if @taxon_certificate.save
+            respond_with(@taxon_certificate, status: 201, default_template: :show)
           else
-            invalid_resource!(@taxon_сertificate)
+            invalid_resource!(@taxon_certificate)
           end
         end
 
         def update
-          @taxon_сertificate = TaxonCertificate.accessible_by(current_ability, :update).find(params[:id])
-          if @taxon_сertificate.update_attributes(taxon_certificate_params)
-            respond_with(@taxon_сertificate, default_template: :show)
+          @taxon_certificate = TaxonCertificate.accessible_by(current_ability, :update).find(params[:id])
+          if @taxon_certificate.update_attributes(taxon_certificate_params)
+            respond_with(@taxon_certificate, default_template: :show)
           else
-            invalid_resource!(@taxon_сertificate)
+            invalid_resource!(@taxon_certificate)
           end
         end
 
         def destroy
-          @taxon_сertificate = scope.certificates.accessible_by(current_ability, :destroy).find(params[:id])
-          @taxon_сertificate.destroy
-          respond_with(@taxon_сertificate, status: 204)
+          @taxon_certificate = scope.certificates.accessible_by(current_ability, :destroy).find(params[:id])
+          @taxon_certificate.destroy
+          respond_with(@taxon_certificate, status: 204)
         end
 
         private
@@ -50,7 +50,7 @@ module Spree
 
         def taxon_certificate_params
 		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
-          params.require(:image).permit(permitted_taxon_certificate_attributes)
+          params.require(:taxon_certificate).permit(permitted_taxon_certificate_attributes)
         end
 
         def scope
