@@ -3,6 +3,8 @@ module Spree
     module V1
       class TaxonInteriorsController < Spree::Api::BaseController
 
+        helper ::SpreeApiV1TaxonInteriorsHelper
+
         def index
 		  @taxon_interiors = scope.interiors.accessible_by(current_ability, :read)
           respond_with(@taxon_interiors)

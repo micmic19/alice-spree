@@ -3,6 +3,8 @@ module Spree
     module V1
       class TaxonCertificatesController < Spree::Api::BaseController
 
+        helper ::SpreeApiV1TaxonCertificatesHelper
+
         def index
 		  @taxon_сertificates = scope.certificates.accessible_by(current_ability, :read)
           respond_with(@taxon_сertificates)
