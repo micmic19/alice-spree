@@ -50,7 +50,7 @@ module Spree
 
         def taxon_certificate_params
 		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
-          params.require(:taxon_certificate).permit(permitted_taxon_certificate_attributes)
+          params.require(:image).permit(permitted_taxon_certificate_attributes)
         end
 
         def scope

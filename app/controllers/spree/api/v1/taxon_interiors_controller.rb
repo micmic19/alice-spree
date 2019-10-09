@@ -50,7 +50,7 @@ module Spree
 
         def taxon_interior_params
 		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
-          params.require(:taxon_interior).permit(permitted_taxon_interior_attributes)
+          params.require(:image).permit(permitted_taxon_interior_attributes)
         end
 
         def scope
