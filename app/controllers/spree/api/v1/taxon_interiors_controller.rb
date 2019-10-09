@@ -17,7 +17,7 @@ module Spree
 
         def create
           authorize! :create, TaxonInterior
-          @taxon_interior = scope.interiors.new(product_file_params)
+          @taxon_interior = scope.interiors.new(taxon_interior_params)
           if @taxon_interior.save
             respond_with(@taxon_interior, status: 201, default_template: :show)
           else
@@ -27,7 +27,7 @@ module Spree
 
         def update
           @taxon_interior = TaxonInterior.accessible_by(current_ability, :update).find(params[:id])
-          if @taxon_interior.update_attributes(product_file_params)
+          if @taxon_interior.update_attributes(taxon_interior_params)
             respond_with(@taxon_interior, default_template: :show)
           else
             invalid_resource!(@taxon_interior)
@@ -42,13 +42,13 @@ module Spree
 
         private
 
-        def permitted_product_file_attributes
+        def permitted_taxon_interior_attributes
           [:alt, :attachment, :position, :viewable_type, :viewable_id]
         end
 
-        def product_file_params
+        def taxon_interior_params
 		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
-          params.require(:image).permit(permitted_product_file_attributes)
+          params.require(:image).permit(permitted_taxon_interior_attributes)
         end
 
         def scope

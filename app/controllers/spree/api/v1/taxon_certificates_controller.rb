@@ -17,7 +17,7 @@ module Spree
 
         def create
           authorize! :create, TaxonCertificate
-          @taxon_сertificate = scope.certificates.new(product_file_params)
+          @taxon_сertificate = scope.certificates.new(taxon_certificate_params)
           if @taxon_сertificate.save
             respond_with(@taxon_сertificate, status: 201, default_template: :show)
           else
@@ -27,7 +27,7 @@ module Spree
 
         def update
           @taxon_сertificate = TaxonCertificate.accessible_by(current_ability, :update).find(params[:id])
-          if @taxon_сertificate.update_attributes(product_file_params)
+          if @taxon_сertificate.update_attributes(taxon_certificate_params)
             respond_with(@taxon_сertificate, default_template: :show)
           else
             invalid_resource!(@taxon_сertificate)
@@ -42,13 +42,13 @@ module Spree
 
         private
 
-        def permitted_product_file_attributes
+        def permitted_taxon_certificate_attributes
           [:alt, :attachment, :position, :viewable_type, :viewable_id]
         end
 
-        def product_file_params
+        def taxon_certificate_params
 		  #TODO :image -> image[attachment] in multipart/form-data and update param in json {"image":...}
-          params.require(:image).permit(permitted_product_file_attributes)
+          params.require(:image).permit(permitted_taxon_certificate_attributes)
         end
 
         def scope
