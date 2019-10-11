@@ -1,6 +1,8 @@
 <% if taxon_dropdown.children.any? %>
 	<li class="dropdown dropdown-submenu"><a href="<%= seo_url(taxon_dropdown)%>" class="dropdown-toggle" data-toggle="dropdown"><%= taxon_dropdown.name %></a>
 		<ul class="dropdown-menu">
+			<li><a href='<%= seo_url(taxon_dropdown)%>' style="background-color: #505206; font-style: italic;"><%= taxon_dropdown.name.capitalize() %></a></li>
+			<li class="divider"></li>
 			<%=render partial: 'spree/taxons/taxon_dropdown', collection: taxon_dropdown.children %>
 		</ul>
 	</li>
