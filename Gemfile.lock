@@ -9,10 +9,10 @@ GIT
 
 GIT
   remote: https://github.com/micmic19/spree_products_filters.git
-  revision: 2dd631b586e10ef04e3e3c66f4ef93c4d9782fc7
-  branch: master
+  revision: b76af0acc9036dc421d8fdaa496464a82bca6de2
+  branch: init3
   specs:
-    spree_products_filters (0.4.6)
+    spree_products_filters (0.5.0)
       haml
       jquery-ui-rails
       spree_core (~> 3.7.0)
@@ -508,7 +508,7 @@ DEPENDENCIES
   spree_gateway (~> 3.4)
   spree_i18n!
   spree_product_files!
-  spree_products_filters (= 0.4.6)!
+  spree_products_filters (= 0.5.0)!
   spree_static_content!
   spring
   spring-watcher-listen (~> 2.0.0)
