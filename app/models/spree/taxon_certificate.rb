@@ -1,6 +1,6 @@
 module Spree
   class TaxonCertificate < Asset
-    #include Configuration::ActiveStorage
+    include Configuration::ActiveStorage
 	
   validate :check_attachment_presence
 
@@ -14,18 +14,18 @@ module Spree
   end
 
 
-	#self.inheritance_column = nil
-   # def styles
-   #   self.class.styles.map do |_, size|
-   #     width, height = size[/(\d+)x(\d+)/].split('x')
+	# self.inheritance_column = nil
+    def styles
+      self.class.styles.map do |_, size|
+        width, height = size[/(\d+)x(\d+)/].split('x')
 
-#        {
-#          url: polymorphic_path(attachment.variant(resize: size), only_path: true),
-#          width: width,
-#          height: height
-#        }
-#      end
-#    end
+        {
+          url: polymorphic_path(attachment.variant(resize: size), only_path: true),
+          width: width,
+          height: height
+        }
+      end
+    end
   	include Rails.application.routes.url_helpers
 
     def display_name
