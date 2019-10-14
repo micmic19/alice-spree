@@ -31,6 +31,14 @@ GIT
       spree_extension
 
 GIT
+  remote: https://github.com/spree-contrib/spree_mail_settings.git
+  revision: be7a9a9fa866054a81270f15e8e5fb289e80a9d7
+  specs:
+    spree_mail_settings (3.3.0)
+      spree_auth_devise (>= 3.1.0, < 4.0)
+      spree_backend (>= 3.1.0, < 4.0)
+
+GIT
   remote: https://github.com/spree-contrib/spree_static_content.git
   revision: 5fbc99058376d6ceb218e3b759c72c127642a463
   specs:
@@ -507,6 +515,7 @@ DEPENDENCIES
   spree_blogging_spree!
   spree_gateway (~> 3.4)
   spree_i18n!
+  spree_mail_settings!
   spree_product_files!
   spree_products_filters (= 0.5.0)!
   spree_static_content!
