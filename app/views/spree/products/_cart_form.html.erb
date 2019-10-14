@@ -16,6 +16,7 @@
               <%= label_tag "variant_id_#{ variant.id }" do %>
                 <span class="variant-description">
                   <%= variant.options_text %>
+                  <%= ", арт: " + variant.sku %>
                 </span>
                 <% if variant_price variant %>
                   <span class="price diff"><%= variant_price variant %></span>
