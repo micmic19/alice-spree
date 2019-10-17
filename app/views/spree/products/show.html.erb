@@ -7,7 +7,8 @@
         <div id="product-images" data-hook="product_images">
           <div id="main-image" class="panel panel-default" data-hook>
             <div class="panel-body text-center">
-              <%= product_image(@product, itemprop: "image") %>
+              <%#= product_image(@product, itemprop: "image") %>
+              <%= link_to image_tag(main_app.url_for(@product.images.first.url(:product))), main_app.url_for(@product.images.first.url(:large)), :data => {:fancybox => 'gallery'} if @product.images.first %>
             </div>
           </div>
           <div id="thumbnails" data-hook>
