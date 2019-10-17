@@ -15,6 +15,7 @@ SitemapGenerator::Sitemap.default_host = Spree::Store.default.url
 
 ## Inform the map cross-linking where to find the other maps.
 # SitemapGenerator::Sitemap.sitemaps_host = "http://#{Spree::Config[:s3_bucket]}.s3.amazonaws.com/"
+# SitemapGenerator::Sitemap.sitemaps_host = "http://spbopt.alice.ru/"
 
 ## Pick a namespace within your bucket to organize your maps. Note you'll need to set this directory to be public.
 # SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
