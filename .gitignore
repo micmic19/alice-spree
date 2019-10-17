@@ -38,3 +38,4 @@ db/schema.rb
 Gemfile.lock
 db/schema.rb
 Gemfile.lock
+public/sitemap*
