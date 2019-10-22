@@ -8,7 +8,12 @@
           <div id="main-image" class="panel panel-default" data-hook>
             <div class="panel-body text-center">
               <%#= product_image(@product, itemprop: "image") %>
-              <%= link_to image_tag(main_app.url_for(@product.images.first.url(:product))), main_app.url_for(@product.images.first.url(:large)), :data => {:fancybox => 'gallery'} if @product.images.first %>
+              <%#= large_image(@product, itemprop: "image") %>
+              <%#= link_to image_tag(main_app.url_for(@product.images.first.url(:product))), main_app.url_for(@product.images.first.url(:large)), :data => {:fancybox => 'gallery'} if @product.images.first %>
+              <% if !@product.property(Spree::Config.alice_action_prop).nil? %>
+                <div class="action">Акция</div>
+              <% end %>
+              <%= link_to product_image(@product, itemprop: "image"), main_app.url_for(@product.images.first.url(:large)), :data => {:fancybox => 'gallery'} if !@product.images.first.nil? %>
             </div>
           </div>
           <div id="thumbnails" data-hook>
