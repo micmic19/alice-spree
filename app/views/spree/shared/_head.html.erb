@@ -4,12 +4,13 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
 <meta property="og:type" content="website" />
 <meta property="og:title" content="<%= title %>" />
+<meta property="og:url" content="<%= "#{request.protocol}#{request.host}#{request.path}" %>" />
 <meta property="og:description" content="<%= meta_data[:description] if meta_data[:description].present? %>" />
 <meta property="og:image" content="<%= request.base_url + '/assets/' + Spree::Config.logo %>" />
 <meta name="yandex-verification" content="115c58d182f3aaaf" />
 <%== meta_data_tags %>
 <%#= canonical_tag(current_store.url) %>
-<link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>">
+<link rel="canonical" href="<%= "#{request.protocol}#{request.host}#{request.path}" %>" />
 <%= favicon_link_tag 'favicon.ico' %>
 <%= render partial: 'spree/shared/favicons' %>
 <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
