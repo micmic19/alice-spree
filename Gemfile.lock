@@ -18,6 +18,14 @@ GIT
       spree_core (~> 3.7.0)
 
 GIT
+  remote: https://github.com/micmic19/spree_slider.git
+  revision: 4cef414690a3a6ec01c393794666e3bf06b380d8
+  specs:
+    spree_slider (3.3.3)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+
+GIT
   remote: https://github.com/spree-contrib/spree_i18n.git
   revision: b230796ed58cd6fe8197b4acdeea9ab89f3070ef
   specs:
@@ -533,6 +541,7 @@ DEPENDENCIES
   spree_product_files!
   spree_products_filters (= 0.5.0)!
   spree_sitemap!
+  spree_slider (= 3.3.3)!
   spree_static_content!
   spring
   spring-watcher-listen (~> 2.0.0)

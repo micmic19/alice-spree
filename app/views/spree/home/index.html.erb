@@ -1,5 +1,6 @@
 <% @body_id = 'home-page' %>
 <div data-hook="homepage_sidebar_navigation">
+	<%= render partial: 'spree/shared/slider', locals: { slider: Spree::Slide.published, cid: 'home', interval: false } %>
   <%= render partial: 'spree/shared/taxonomies' %>
 </div>
 <div class="col-sm-12">
