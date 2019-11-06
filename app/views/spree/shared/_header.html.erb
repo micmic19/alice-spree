@@ -6,15 +6,15 @@
           <%= logo %>
         </figure>
 		<div class='desc_block col-md-4 hidden-xs'>
-			<h1><%= Spree::Config.alice_title %></h1>
-			<div><%= mail_to Spree::Config.alice_email %></div>
+			<h1><%= company_title %></h1>
+			<div><%= mail_to company_email %></div>
 		</div>
 		<div class='col-md-4 col-xs-9'>
 		<%= render partial: 'spree/shared/search' %>
 		</div>
 		<div class='desc_block col-md-2 hidden-xs'>
-			<h4><nobr><%= link_to Spree::Config.alice_phone, "tel:#{Spree::Config.alice_phone}" %></nobr></h4>
-			<h4><nobr><%= link_to Spree::Config.alice_phone1, "tel:#{Spree::Config.alice_phone1}" %></nobr></h4>
+			<h4><nobr><%= link_to company_phone, "tel:#{company_phone}" %></nobr></h4>
+			<h4><nobr><%= link_to company_phone1, "tel:#{company_phone1}" %></nobr></h4>
 		</div>
 
       </div>

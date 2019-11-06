@@ -8,7 +8,7 @@
       <% else %>
         <%= link_to image_tag(main_app.url_for(variant.images.first.url(:small))), variant.product %>
       <% end %>
-      <% @step = variant.option_values.select { |a| a.option_type.id == Spree::Config.alice_step_option_id }.first %>
+      <% @step = variant.option_values.select { |a| a.option_type.id == step_option_id }.first %>
     </td>
     <td class="cart-item-description" data-hook="cart_item_description">
       <h4><%= link_to line_item.name, product_path(variant.product) %></h4>

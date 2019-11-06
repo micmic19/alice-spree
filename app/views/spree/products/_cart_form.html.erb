@@ -6,7 +6,7 @@
         <ul class="list-group">
           <% @product.variants_and_option_values(current_currency).each_with_index do |variant, index| %>
             <li>
-              <% @step = variant.option_values.select { |a| a.option_type.id == Spree::Config.alice_step_option_id }.first %>
+              <% @step = variant.option_values.select { |a| a.option_type.id == step_option_id }.first %>
               <%= radio_button_tag "variant_id", variant.id, index == 0,
                   'data-price' => variant.price_in(current_currency).money,
                   'data-in-stock' => variant.can_supply?,
