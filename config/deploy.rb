@@ -1,7 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
-set :application, "alicespree"
+# set :application, "alicespree"
+set :application, ENV["DEPLOY_APP_NAME"]
 set :repo_url, "git@github.com:micmic19/alice-spree.git"
 
 # Default branch is :master
