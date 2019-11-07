@@ -2,7 +2,7 @@ module ApplicationHelper
   def company_phone
     domainname = request.host
     if domainname.include? 'mskopt'
-      return '+7 (495) 287-81-41'
+      return '+7 (495) 287-81-39'
     else
       return '+7 (812) 331-14-60'
     end
@@ -11,7 +11,7 @@ module ApplicationHelper
   def company_phone1
     domainname = request.host
     if domainname.include? 'mskopt'
-      return '+7 (495) 287-81-39'
+      return '+7 (926) 728-12-68'
     else
       return '+7 (921) 740-66-92'
     end
