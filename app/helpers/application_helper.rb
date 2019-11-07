@@ -38,7 +38,7 @@ module ApplicationHelper
   def step_option_id
     domainname = request.host
     if domainname.include? 'mskopt'
-      return 4
+      return 2
     else
       return 4
     end
