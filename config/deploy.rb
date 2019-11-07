@@ -42,3 +42,4 @@ set :keep_releases, 5
 # set :ssh_options, verify_host_key: :secure
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # set :nginx_use_ssl, true
+set :linked_files, %w{config/master.key}
