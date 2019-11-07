@@ -43,4 +43,23 @@ module ApplicationHelper
       return 4
     end
   end
+
+  def yandex_counter
+    domainname = request.host
+    if domainname.include? 'mskopt'
+      return '56122603'
+    else
+      return '55775020'
+    end
+  end
+
+  def google_counter
+    domainname = request.host
+    if domainname.include? 'mskopt'
+      return 'UA-49310212-3'
+    else
+      return 'UA-49310212-2'
+    end
+  end
+
 end
