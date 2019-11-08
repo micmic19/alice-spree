@@ -9,10 +9,10 @@ GIT
 
 GIT
   remote: https://github.com/micmic19/spree_products_filters.git
-  revision: 78689057df156fdefdab22b9ce5419c7f0910527
+  revision: 19dc6f7646eb9029e1d48d092dbf3903e4d991ab
   branch: another
   specs:
-    spree_products_filters (0.2.7)
+    spree_products_filters (0.2.8)
       haml
       jquery-ui-rails
       spree_core (>= 3.6.0)
@@ -539,7 +539,7 @@ DEPENDENCIES
   spree_i18n!
   spree_mail_settings!
   spree_product_files!
-  spree_products_filters (= 0.2.7)!
+  spree_products_filters (= 0.2.8)!
   spree_sitemap!
   spree_slider (= 3.3.3)!
   spree_static_content!
