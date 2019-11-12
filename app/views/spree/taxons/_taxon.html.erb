@@ -2,8 +2,8 @@
 <div class="taxon col-xs-12 col-sm-4 col-lg-3" data-hook="taxon">
   <h4 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs' %></h4>
     <%#= taxon.description_ %>
-  <% if taxon.products.any? %>
-  	<% if !taxon.products.first.property(Spree::Config.alice_action_prop).nil? %>
+  <% if taxon.products.active.any? %>
+  	<% if !taxon.products.active.first.property(Spree::Config.alice_action_prop).nil? %>
  		<div class="ribbon"><span>Акция</span></div>	
   	<% end %>
   <% end %>
