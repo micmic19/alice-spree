@@ -3,6 +3,8 @@ module ApplicationHelper
     domainname = request.host
     if domainname.include? 'mskopt'
       return '+7 (495) 287-81-39'
+    elsif domainname.include? 'kmv'
+      return '+7 (8793) 53-73-50'
     else
       return '+7 (812) 331-14-60'
     end
@@ -12,6 +14,8 @@ module ApplicationHelper
     domainname = request.host
     if domainname.include? 'mskopt'
       return '+7 (926) 728-12-68'
+    elsif domainname.include? 'kmv'
+      return '+7 (928) 338-63-28'
     else
       return '+7 (921) 740-66-92'
     end
@@ -21,6 +25,8 @@ module ApplicationHelper
     domainname = request.host
     if domainname.include? 'mskopt'
       return 'sale@msk.alice.ru'
+    elsif domainname.include? 'kmv'
+      return 'sale@kmv.alice.ru'
     else
       return 'sale@alice.ru'
     end
@@ -30,6 +36,8 @@ module ApplicationHelper
     domainname = request.host
     if domainname.include? 'mskopt'
       return 'Линолеум оптом'
+    elsif domainname.include? 'kmv'
+      return 'Линолеум оптом'
     else
       return 'Линолеум оптом'
     end
@@ -38,6 +46,8 @@ module ApplicationHelper
   def step_option_id
     domainname = request.host
     if domainname.include? 'mskopt'
+      return 2
+    elsif domainname.include? 'kmv'
       return 2
     else
       return 4
