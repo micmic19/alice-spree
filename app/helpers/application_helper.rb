@@ -58,6 +58,8 @@ module ApplicationHelper
     domainname = request.host
     if domainname.include? 'mskopt'
       return '56122603'
+    elsif domainname.include? 'kmv'
+      return '56317528'
     else
       return '55775020'
     end
@@ -66,7 +68,17 @@ module ApplicationHelper
   def google_counter
     domainname = request.host
     if domainname.include? 'mskopt'
-      return 'UA-49310212-3'
+      if request.scheme.include? 'https'
+        return 'UA-49310212-3'
+      else
+        return 'UA-49310212-6'
+      end
+    elsif domainname.include? 'kmv'
+      if request.scheme.include? 'https'
+        return 'UA-49310212-4'
+      else
+        return 'UA-49310212-5'
+      end
     else
       return 'UA-49310212-2'
     end
