@@ -17,7 +17,7 @@ module Spree
               medium: '120x120>',
               product: '240x240>',
               large: '600x600>',
-              extralarge: '860x860'
+              extralarge: '860x860>'
             }
           end
 
