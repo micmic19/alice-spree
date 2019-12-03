@@ -84,4 +84,3 @@ gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings'
 gem 'spree_sitemap', github: 'spree-contrib/spree_sitemap'
 gem 'whenever', require: false
 gem 'spree_slider', '3.3.3', github: 'micmic19/spree_slider'
-gem 'poppler'
