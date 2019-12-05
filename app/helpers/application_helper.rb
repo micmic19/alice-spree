@@ -70,6 +70,8 @@ module ApplicationHelper
       return '56122603'
     elsif domainname.include? 'kmv'
       return '56317528'
+    elsif domainname.include? 'samara'
+      return '56540977'
     else
       return '55775020'
     end
@@ -89,6 +91,8 @@ module ApplicationHelper
       else
         return 'UA-49310212-5'
       end
+    elsif domainname.include? 'samara'
+      return 'UA-49310212-7'
     else
       return 'UA-49310212-2'
     end
