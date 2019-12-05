@@ -5,6 +5,8 @@ module ApplicationHelper
       return '+7 (495) 287-81-39'
     elsif domainname.include? 'kmv'
       return '+7 (8793) 53-73-50'
+    elsif domainname.include? 'samara'
+      return '+7 (846) 977-74-48'
     else
       return '+7 (812) 331-14-60'
     end
@@ -16,6 +18,8 @@ module ApplicationHelper
       return '+7 (495) 287-81-40'
     elsif domainname.include? 'kmv'
       return '+7 (928) 338-63-28'
+    elsif domainname.include? 'samara'
+      return '+7 (846) 977-74-49'
     else
       return '+7 (921) 740-66-92'
     end
@@ -27,6 +31,8 @@ module ApplicationHelper
       return 'sale@msk.alice.ru'
     elsif domainname.include? 'kmv'
       return 'sale@kmv.alice.ru'
+    elsif domainname.include? 'samara'
+      return 'sale@samara.alice.ru'
     else
       return 'sale@alice.ru'
     end
@@ -38,6 +44,8 @@ module ApplicationHelper
       return 'Линолеум оптом'
     elsif domainname.include? 'kmv'
       return 'Линолеум оптом в г. Лермонтов и Пятигорск'
+    elsif domainname.include? 'samara'
+      return 'Линолеум оптом в Самаре'
     else
       return 'Линолеум оптом'
     end
@@ -48,6 +56,8 @@ module ApplicationHelper
     if domainname.include? 'mskopt'
       return 2
     elsif domainname.include? 'kmv'
+      return 2
+    elsif domainname.include? 'samara'
       return 2
     else
       return 4
