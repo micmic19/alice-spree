@@ -82,6 +82,8 @@ module ApplicationHelper
       return '56317528'
     elsif domainname.include? 'samara'
       return '56540977'
+    elsif domainname.include? 'nskopt'
+      return '56609323'
     else
       return '55775020'
     end
@@ -103,6 +105,8 @@ module ApplicationHelper
       end
     elsif domainname.include? 'samara'
       return 'UA-49310212-7'
+    elsif domainname.include? 'nskopt'
+      return 'UA-49310212-8'
     else
       return 'UA-49310212-2'
     end
