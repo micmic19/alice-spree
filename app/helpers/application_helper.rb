@@ -112,4 +112,12 @@ module ApplicationHelper
     end
   end
 
+  def min_price_amount(taxon)
+    #if taxon.products.active.any?
+    if Spree::Product.in_taxon(taxon).active.any?
+      return 'от ' + Spree::Product.in_taxon(taxon).sort_by(&:price).first.display_amount.to_s
+    else
+      return ''
+    end
+  end
 end

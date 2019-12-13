@@ -3,11 +3,18 @@
   <h4 class="subtaxon-title"><%= link_to taxon.name, seo_url(taxon), class: 'breadcrumbs' %></h4>
     <%#= taxon.description_ %>
   <% if taxon.products.active.any? %>
-  	<% if !taxon.products.active.first.property(Spree::Config.alice_action_prop).nil? %>
+ 	<% if !taxon.products.active.first.property(Spree::Config.alice_action_prop).nil? %>
  		<div class="ribbon"><span>Акция</span></div>	
   	<% end %>
   <% end %>
   <% if taxon.icon %>
   	<%= link_to (image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;'), seo_url(taxon) %>
-  <% end %>
+  		<% if min_price_amount(taxon) != '' %>
+	  		<div class="box">
+	  			<div class="ovtext">
+	  				<h4><%= min_price_amount(taxon) %></h4>
+	  			</div>
+	  		</div>
+	  	<% end %>
+  	<% end %>
 </div>
