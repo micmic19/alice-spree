@@ -55,7 +55,7 @@ module ApplicationHelper
     elsif domainname.include? 'nskopt'
       return 'Линолеум оптом в Новосибирске'
     else
-      return 'Линолеум оптом'
+      return 'Линолеум и ковры оптом'
     end
   end
 
