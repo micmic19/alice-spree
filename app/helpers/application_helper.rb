@@ -47,13 +47,13 @@ module ApplicationHelper
   def company_title
     domainname = request.host
     if domainname.include? 'mskopt'
-      return 'Линолеум оптом'
+      return 'Линолеум и ковры оптом'
     elsif domainname.include? 'kmv'
-      return 'Линолеум оптом в г. Лермонтов и Пятигорск'
+      return 'Линолеум и ковры оптом в г. Лермонтов и Пятигорск'
     elsif domainname.include? 'samara'
-      return 'Линолеум оптом в Самаре'
+      return 'Линолеум и ковры оптом в Самаре'
     elsif domainname.include? 'nskopt'
-      return 'Линолеум оптом в Новосибирске'
+      return 'Линолеум и ковры оптом в Новосибирске'
     else
       return 'Линолеум и ковры оптом'
     end
