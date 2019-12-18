@@ -15,7 +15,7 @@
   </div>
   <% if @taxon.children.any? %>
 	  <div class="taxon-description col-sm-12">
-		<%= @taxon.description %>
+		<%= @taxon.description.html_safe %>
 	  </div>
   <% else %>
       <%= render partial: '/spree/taxons/taxon_menu', locals: { taxon: @taxon } %>  

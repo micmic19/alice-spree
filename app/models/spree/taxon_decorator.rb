@@ -18,7 +18,7 @@ Spree::Taxon.class_eval do
       end
 		rescue JSON::ParserError
 			data = {"properties"=>self.taxon_props}
-			data[param]
+			data[param].html_safe
 		end
 	end
 end
