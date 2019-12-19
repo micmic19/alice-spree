@@ -1,9 +1,10 @@
-env :PATH, ENV['PATH']
+# env :PATH, ENV['PATH']
 # Use this file to easily define all of your cron jobs.
 #
 # It's helpful, but not entirely necessary to understand cron before proceeding.
 # http://en.wikipedia.org/wiki/Cron
-
+job_type :rbenv_rake, %Q{export PATH=/opt/rbenv/shims:/opt/rbenv/bin:/usr/bin:$PATH; eval "$(rbenv init -)"; \
+                         cd :path && bundle exec rake :task --silent :output }
 # Example:
 #
 set :output, "/home/deploy/cron_log.log"
@@ -20,5 +21,5 @@ set :output, "/home/deploy/cron_log.log"
 
 # Learn more: http://github.com/javan/whenever
 every 1.day, at: '8:00 am' do
-  rake '-s sitemap:refresh'
+  rbenv_rake '-s sitemap:refresh'
 end
