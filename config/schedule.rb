@@ -20,6 +20,6 @@ set :output, "/home/deploy/cron_log.log"
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.day, at: '8:00 am' do
+every 1.day, at: '5:00 am' do
   rbenv_rake '-s sitemap:refresh'
 end
