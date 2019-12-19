@@ -7,7 +7,11 @@
 <div data-hook="products_search_results_heading">
   <% if products.empty? %>
     <div data-hook="products_search_results_heading_no_results_found">
-      <%= Spree.t(:no_products_found) %>
+      <% if params[:controller] == 'spree/taxons' %>
+        <div>Все подробности у наших менеджеров по <%= link_to company_phone, "tel:#{company_phone}" %></div>
+      <% else %>
+        <%= Spree.t(:no_products_found) %>
+      <% end %>
     </div>
   <% elsif params.key?(:keywords) %>
     <div data-hook="products_search_results_heading_results_found">
