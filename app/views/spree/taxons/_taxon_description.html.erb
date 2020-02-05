@@ -2,7 +2,11 @@
 <div class="taxon col-sm-12" data-hook="taxon">
 	<h3>Описание коллекции</h3>
 	<div class="col-sm-4">	
-	  <%= image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;' if taxon.icon %>
+		<% if products.any? %>
+			<%= image_tag main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;' if taxon.icon %>
+		<% else %>
+			<%= link_to image_tag(main_app.url_for(taxon.icon.try(:attachment)), style: 'height:170px;width:auto;'), main_app.url_for(taxon.icon.try(:attachment)), :data => {:fancybox => 'gallery'} if taxon.icon %>		
+		<% end %>
 	</div>  
 	<div class="taxon-description col-sm-8">
 		<% unless taxon.description.nil? %>
