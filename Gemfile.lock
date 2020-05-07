@@ -190,10 +190,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.5)
+    concurrent-ruby (1.1.6)
     cookies_eu (1.7.6)
       js_cookie_rails (~> 2.2.0)
-    crass (1.0.5)
+    crass (1.0.6)
     css_parser (1.7.1)
       addressable
     deface (1.5.3)
@@ -209,7 +209,7 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
-    doorkeeper (5.2.2)
+    doorkeeper (5.3.3)
       railties (>= 5)
     erubi (1.9.0)
     execjs (2.7.0)
@@ -226,7 +226,7 @@ GEM
       tilt
     highline (2.0.3)
     htmlentities (4.3.4)
-    i18n (1.7.0)
+    i18n (1.8.2)
       concurrent-ruby (~> 1.0)
     i18n_data (0.10.0)
     io-like (0.3.0)
@@ -259,7 +259,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.4.0)
+    loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -274,7 +274,7 @@ GEM
     mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.0)
     monetize (1.9.2)
       money (~> 6.12)
     money (6.13.6)
@@ -314,7 +314,7 @@ GEM
       nio4r (~> 2.0)
     rabl (0.13.1)
       activesupport (>= 2.3.14)
-    rack (2.0.7)
+    rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -486,7 +486,7 @@ GEM
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
       tzinfo
-    tzinfo (1.2.5)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
