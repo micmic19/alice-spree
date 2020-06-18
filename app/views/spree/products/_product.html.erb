@@ -6,6 +6,9 @@
         <% if !product.property(Spree::Config.alice_action_prop).nil? %>
           <div class="action">Акция</div>
         <% end %>
+        <% unless product.promotionable? %>
+            <div class="news">Новинка</div>
+        <% end %>
         <%= link_to url, itemprop: "url" do %>
           <%= small_image(product, itemprop: "image") %><br/>
           <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
