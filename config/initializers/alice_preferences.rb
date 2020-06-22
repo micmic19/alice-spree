@@ -10,4 +10,5 @@ Spree::AppConfiguration.class_eval do
 #  preference :alice_step_option_id, :integer, default: "config.alice_step_option_id?"
   preference :alice_certimg, :string, default: "config.alice_certimg?"
   preference :alice_action_prop, :string, default: "config.alice_action_prop?"
+  preference :alice_news_prop, :string, default: "config.alice_news_prop?"
 end

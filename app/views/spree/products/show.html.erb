@@ -13,7 +13,7 @@
               <% if !@product.property(Spree::Config.alice_action_prop).nil? %>
                 <div class="action">Акция</div>
               <% end %>
-              <% unless @product.promotionable? %>
+              <% unless @product.property(Spree::Config.alice_news_prop).nil? %>
                   <div class="news">Новинка</div>
               <% end %>
               <%= link_to product_image(@product, itemprop: "image"), main_app.url_for(@product.images.first.url(:large)), :data => {:fancybox => 'gallery'} if !@product.images.first.nil? %>
