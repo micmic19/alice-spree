@@ -10,7 +10,7 @@ module ApplicationHelper
     elsif domainname.include? 'nskopt'
       return '+7 (383) 363-06-33'
     else
-      return '+7 (812) 331-14-60'
+      return '+7 (812) 331-14-61'
     end
   end
 
@@ -25,7 +25,7 @@ module ApplicationHelper
     elsif domainname.include? 'nskopt'
       return '+7 (383) 363-06-22'
     else
-      return '+7 (921) 740-66-92'
+      return ''
     end
   end
 
@@ -40,7 +40,7 @@ module ApplicationHelper
     elsif domainname.include? 'nskopt'
       return 'sale@nsk.alice.ru'
     else
-      return 'sale@alice.ru'
+      return 'processing@alice.ru'
     end
   end
 
